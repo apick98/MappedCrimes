@@ -26,19 +26,19 @@ namespace map3
        public MainWindow()
        {
             InitializeComponent();
-       }
+            APIHelper.InitialiseClient();
+        }
         private async void MapControl_Loaded(object sender, RoutedEventArgs e)
         {
-            BasicGeoposition centrePos = new BasicGeoposition() { Latitude = 53, Longitude = -3.2 };
-            var centre = new Geopoint(centrePos);
-            BasicGeoposition geoPosition = new BasicGeoposition() { Latitude = 51.491947, Longitude = -0.161720 };
-            var myPoint = new Geopoint(geoPosition);
-            MapIcon myPOI = new MapIcon { Location = myPoint, Title = "75273563", NormalizedAnchorPoint = new Windows.Foundation.Point(0.5,1.0), ZIndex = 0 };
-            myPOI.Image = RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:Assets/pin.png"));
-            MapControl.MapElements.Add(item: myPOI);
-
-            //await MapControl.TrySetViewAsync(myPoint,10);
-            await MapControl.TrySetViewAsync(centre, 5.9);
+            var ukCrimes = await PoliceProcessor.LoadCrimesByLatitudeLongitude(52.9, -1.13);
+            foreach (var crime in ukCrimes)
+            {
+                MapControl.MapElements.Add(new MapIcon { Location = new Geopoint(new BasicGeoposition() { Latitude = crime.location.latitude, Longitude = crime.location.longitude }), NormalizedAnchorPoint = new Windows.Foundation.Point(0.5, 1.0), ZIndex = 0 });
+            }
+            Geopoint centre = new Geopoint(new BasicGeoposition() { Latitude = ukCrimes.First().location.latitude, Longitude = ukCrimes.First().location.longitude });
+            CrimeType.Content = ukCrimes.First().category;
+            Year.Content = ukCrimes.First().Month;
+            await MapControl.TrySetViewAsync(centre, 13.5);
         }
     }
 }

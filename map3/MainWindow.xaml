@@ -6,11 +6,28 @@
         xmlns:local="clr-namespace:map3"
         xmlns:Controls="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls" x:Class="map3.MainWindow"
         mc:Ignorable="d"
-        Title="Crime Map" Height="450" Width="800" >
+        Title="Crime Map" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Margin="392,0,0,0">
 
         <Controls:MapControl x:Name="MapControl" MapServiceToken = "ObSmiZnKnadUb4U3bIoC~q1lKXPrZ9NzN3jQG4IIcLw~ApGSR-YVM1HhpkhZUqAbzKGkyB0DO5aA4511N0qK8H4C8hK2dNP-jU3gRGij5zCf" Loaded="MapControl_Loaded"/>
         <TextBlock HorizontalAlignment="Left" Height="23" Margin="-357,22,0,0" TextWrapping="Wrap" Text="Street Crime in England, Wales and Northern Ireland" VerticalAlignment="Top" Width="309" TextDecorations="Underline" FontWeight="Bold" />
-        <Image Source="Assets/pin.png" />
+        <Label Content="Type of Crime" HorizontalAlignment="Left" Margin="-324,84,0,0" VerticalAlignment="Top" Height="32" Width="124"/>
+        <Label Content="Month" HorizontalAlignment="Left" Margin="-324,264,0,0" VerticalAlignment="Top" Height="30" Width="68"/>
+        <Label Content="Location" HorizontalAlignment="Left" Margin="-324,124,0,0" VerticalAlignment="Top" Height="30" Width="82"/>
+        <Label HorizontalAlignment="Left" Margin="-337,227,0,0" VerticalAlignment="Top"/>
+        <Label Content="Longitude" HorizontalAlignment="Left" Margin="-282,196,0,0" VerticalAlignment="Top" Height="32" Width="96"/>
+        <Label Content="Latitude" HorizontalAlignment="Left" Margin="-282,156,0,0" VerticalAlignment="Top" Height="32" Width="80"/>
+        <Label HorizontalAlignment="Left" Margin="-309,196,0,0" VerticalAlignment="Top"/>
+        <Label Content="Year" HorizontalAlignment="Left" Margin="-324,232,0,0" VerticalAlignment="Top" Height="32" Width="48"/>
+        <Label Content="Label" x:Name= "CrimeType" HorizontalAlignment="Left" Margin="-147,84,0,0" VerticalAlignment="Top" Height="32" Width="56"/>
+        <Label Content="Label" x:Name= "Month" HorizontalAlignment="Left" Margin="-147,264,0,0" VerticalAlignment="Top" Height="30" Width="56"/>
+        <Label Content="Label" x:Name= "Year" HorizontalAlignment="Left" Margin="-147,232,0,0" VerticalAlignment="Top" Height="32" Width="56"/>
+        <Label Content="Label" x:Name="lng" HorizontalAlignment="Left" Margin="-147,196,0,0" VerticalAlignment="Top" Height="32" Width="56"/>
+        <Label Content="Label" x:Name="lat" HorizontalAlignment="Left" Margin="-147,156,0,0" VerticalAlignment="Top" Height="32" Width="56"/>
+        <Label Content="Label" x:Name="loc" HorizontalAlignment="Left" Margin="-147,124,0,0" VerticalAlignment="Top" Height="30" Width="56"/>
+        <Label Content="Force" HorizontalAlignment="Left" Margin="-324,302,0,0" VerticalAlignment="Top" Height="32" Width="58"/>
+        <Label Content="Label" x:Name="force" HorizontalAlignment="Left" Margin="-147,302,0,0" VerticalAlignment="Top" Height="32" Width="56"/>
+        <Label Content="Case status" HorizontalAlignment="Left" Margin="-324,338,0,0" VerticalAlignment="Top" Height="32" Width="104"/>
+        <Label Content="Label" x:Name="status" HorizontalAlignment="Left" Margin="-147,338,0,0" VerticalAlignment="Top" Height="32" Width="56"/>
     </Grid>
 </Window>
