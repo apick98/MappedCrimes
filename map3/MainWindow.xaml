@@ -1,0 +1,16 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:map3"
+        xmlns:Controls="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls" x:Class="map3.MainWindow"
+        mc:Ignorable="d"
+        Title="Crime Map" Height="450" Width="800" >
+    <Grid Margin="392,0,0,0">
+
+        <Controls:MapControl x:Name="MapControl" MapServiceToken = "ObSmiZnKnadUb4U3bIoC~q1lKXPrZ9NzN3jQG4IIcLw~ApGSR-YVM1HhpkhZUqAbzKGkyB0DO5aA4511N0qK8H4C8hK2dNP-jU3gRGij5zCf" Loaded="MapControl_Loaded"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="-357,22,0,0" TextWrapping="Wrap" Text="Street Crime in England, Wales and Northern Ireland" VerticalAlignment="Top" Width="309" TextDecorations="Underline" FontWeight="Bold" />
+        <Image Source="Assets/pin.png" />
+    </Grid>
+</Window>
